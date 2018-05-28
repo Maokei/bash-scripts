@@ -14,6 +14,7 @@ sudo add-apt-repository -y ppa:numix/ppa
 sudo add-apt-repository -y ppa:moka/stable
 sudo add-apt-repository -y ppa:zeal-developers/ppa
 sudo add-apt-repository -y ppa:webupd8team/java
+sudo add-apt-repository -y ppa:dawidd0811/neofetch
 
 # nodejs
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -47,7 +48,7 @@ sudo apt -y --force-yes upgrade
 sudo apt -y install \
     sublime-text-installer git gitg truecrypt \
     virtualbox virtualbox-guest-additions-iso filezilla \
-    gimp p7zip p7zip-full p7zip-rar \
+    gimp p7zip p7zip-full p7zip-rar neofetch \
     indicator-multiload curl gparted dkms \
     mcrypt mysql-server postgresql postgresql-contrib maven \
     linux-headers-generic moka-icon-theme pavucontrol \
@@ -57,6 +58,7 @@ sudo apt -y install \
 
 # java
 sudo apt -y install oracle-java8-installer
+echo 'export JAVA_HOME="/usr/lib/jvm/java-8-oracle"' >> ~/.bashrc
 
 # install docker
 sudo apt -y install docker-ce
@@ -76,6 +78,9 @@ git clone https://github.com/powerline/fonts.git && cd fonts && sh ./install.sh
 echo 'if [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
 source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi' >> ~/.bashrc
+
+# neofetch
+echo 'neofetch' >> ~/.bashrc
 
 # Virtualbox
 sudo adduser $USER vboxusers
