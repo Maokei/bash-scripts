@@ -18,6 +18,10 @@ sudo add-apt-repository -y ppa:webupd8team/java
 # nodejs
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 
+# yarn
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+
 # docker
 sudo apt -y install \
     apt-transport-https \
@@ -43,13 +47,16 @@ sudo apt -y --force-yes upgrade
 sudo apt -y install \
     sublime-text-installer git gitg truecrypt \
     virtualbox virtualbox-guest-additions-iso filezilla \
-    gimp p7zip p7zip-full p7zip-rar unity-tweak-tool \
+    gimp p7zip p7zip-full p7zip-rar \
     indicator-multiload curl gparted dkms \
     mcrypt mysql-server postgresql postgresql-contrib maven \
     linux-headers-generic moka-icon-theme pavucontrol \
-    build-essential ubuntu-make zeal nodejs \
+    build-essential ubuntu-make zeal nodejs yarn tmux \
     atom telegram vlc synaptic gufw blender vim codeblocks htop \
     moka-gtk-theme numix-gtk-theme numix-icon-theme-circle python-pip \
+
+# java
+sudo apt -y install oracle-java8-installer
 
 # install docker
 sudo apt -y install docker-ce
@@ -65,6 +72,10 @@ sudo snap install vscode
 # powerline https://gist.github.com/leosuncin/25bad6ae66c5d513b986
 sudo pip install powerline-status
 git clone https://github.com/powerline/fonts.git && cd fonts && sh ./install.sh
+
+echo 'if [ -f /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh ]; then
+source /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+fi' >> ~/.bashrc
 
 # Virtualbox
 sudo adduser $USER vboxusers
