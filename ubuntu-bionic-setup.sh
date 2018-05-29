@@ -1,20 +1,16 @@
 #!/bin/bash
 
 # add repos
-sudo add-apt-repository -y ppa:dimula73/krita
-sudo add-apt-repository -y ppa:inkscape.dev/stable
 sudo add-apt-repository -y ppa:atareao/telegram
-sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 sudo add-apt-repository -y ppa:stefansundin/truecrypt
 sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
 sudo add-apt-repository -y ppa:damien-moore/codeblocks
 sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:thomas-schiex/blender
-sudo add-apt-repository -y ppa:numix/ppa
-sudo add-apt-repository -y ppa:moka/stable
 sudo add-apt-repository -y ppa:zeal-developers/ppa
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:dawidd0811/neofetch
+sudo add-apt-repository -y ppa:tiheum/equinox
 
 # nodejs
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -36,17 +32,13 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable edge"
 
-
-# nodesource ppa nodejs
-curl -sL https://deb.nodesource.com/setup | sudo bash -
-
 # basic update
 sudo apt -y --force-yes update
 sudo apt -y --force-yes upgrade
 
 # install apps
 sudo apt -y install \
-    sublime-text-installer git gitg truecrypt \
+    git gitg truecrypt \
     virtualbox virtualbox-guest-additions-iso filezilla \
     gimp p7zip p7zip-full p7zip-rar neofetch \
     indicator-multiload curl gparted dkms \
@@ -54,7 +46,7 @@ sudo apt -y install \
     linux-headers-generic moka-icon-theme pavucontrol \
     build-essential ubuntu-make zeal nodejs yarn tmux \
     atom telegram vlc synaptic gufw blender vim codeblocks htop \
-    moka-gtk-theme numix-gtk-theme numix-icon-theme-circle python-pip \
+    faenza-icon-theme python-pip \
 
 # java
 sudo apt -y install oracle-java8-installer
@@ -69,7 +61,7 @@ sudo gpasswd -a $USER docker
 sudo snap install slack
 sudo snap install notepad-plus-plus
 sudo snap install spotify
-sudo snap install vscode
+sudo snap install --classic vscode 
 
 # powerline https://gist.github.com/leosuncin/25bad6ae66c5d513b986
 sudo pip install powerline-status
