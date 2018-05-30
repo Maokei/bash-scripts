@@ -4,13 +4,10 @@
 sudo add-apt-repository -y ppa:atareao/telegram
 sudo add-apt-repository -y ppa:stefansundin/truecrypt
 sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
-sudo add-apt-repository -y ppa:damien-moore/codeblocks
 sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:thomas-schiex/blender
-sudo add-apt-repository -y ppa:zeal-developers/ppa
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo add-apt-repository -y ppa:dawidd0811/neofetch
-sudo add-apt-repository -y ppa:tiheum/equinox
 
 # nodejs
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
@@ -41,12 +38,12 @@ sudo apt -y install \
     git gitg truecrypt \
     virtualbox virtualbox-guest-additions-iso filezilla \
     gimp p7zip p7zip-full p7zip-rar neofetch \
-    indicator-multiload curl gparted dkms \
+    gparted dkms nodejs \
     mcrypt mysql-server postgresql postgresql-contrib maven \
     linux-headers-generic moka-icon-theme pavucontrol \
-    build-essential ubuntu-make zeal nodejs yarn tmux \
+    build-essential ubuntu-make yarn tmux \
     atom telegram vlc synaptic gufw blender vim codeblocks htop \
-    faenza-icon-theme python-pip \
+    python-pip \
 
 # java
 sudo apt -y install oracle-java8-installer
