@@ -1,4 +1,4 @@
-!# /bin/bash
+#!/usr/bin/env bash
 # Ubuntu 18.10 install script
 #
 
