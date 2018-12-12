@@ -28,6 +28,7 @@ sudo snap install intellij-idea-community --classic
 sudo snap install sublime-text --classic
 sudo snap install slack --classic
 sudo snap install notepad-plus-plus --classic
+sudo snap install kotlin --classic
 sudo snap install robo3t-snap
 sudo snap install postman
 
