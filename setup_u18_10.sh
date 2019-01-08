@@ -5,8 +5,9 @@
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 sudo add-apt-repository -y ppa:atareao/telegram
-sudo add-apt repository -y ppa:ubuntu-desktop/ubuntu-make
-sudo add-apt repository -y ppa:remmina-ppa-team/remmina-next
+sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
+sudo add-apt-repository -y ppa:remmina-ppa-team/remmina-next
+sudo add-apt-repository -y ppa:peek-developers/stable
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -38,7 +39,7 @@ sudo apt update
 #install
 sudo apt install -y git neofetch docker-ce virtualbox virtualbox-ext-pack \
 virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
-remmina remmina-plugin-rdp libfreerdp-plugins-standard mongodb \
+remmina remmina-plugin-rdp libfreerdp-plugins-standard mongodb peek \
 mysql-server mysql-workbench postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar code powerline meld \
 ubuntu-restricted-extras gcc g++ make nodejs yarn ubuntu-make wireshark tlp
