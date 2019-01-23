@@ -32,6 +32,7 @@ sudo snap install notepad-plus-plus --classic
 sudo snap install kotlin --classic
 sudo snap install robo3t-snap
 sudo snap install postman
+sudo snap install insomnia
 
 #update
 sudo apt update
