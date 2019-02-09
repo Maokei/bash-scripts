@@ -43,7 +43,7 @@ virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
 remmina remmina-plugin-rdp libfreerdp-plugins-standard mongodb peek \
 mysql-server mysql-workbench postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar code powerline meld \
-ubuntu-restricted-extras gcc g++ make nodejs yarn ubuntu-make wireshark tlp
+ubuntu-restricted-extras gcc g++ make nodejs yarn ubuntu-make python3-pip wireshark tlp
 
 #groups
 sudo usermod -aG docker ${USER}
