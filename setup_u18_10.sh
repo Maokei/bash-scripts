@@ -40,7 +40,7 @@ sudo apt update
 #install
 sudo apt install -y git neofetch docker-ce virtualbox virtualbox-ext-pack \
 virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
-remmina remmina-plugin-rdp libfreerdp-plugins-standard mongodb peek \
+remmina remmina-plugin-rdp libfreerdp-plugins-standard mongodb peek asciio \
 mysql-server mysql-workbench postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar code powerline meld \
 ubuntu-restricted-extras gcc g++ make nodejs yarn ubuntu-make python3-pip wireshark tlp
