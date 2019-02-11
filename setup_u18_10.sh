@@ -70,6 +70,18 @@ sudo echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf
 sudo systemctl enable tlp
 sudo systemctl enable mongodb
 
+#Vs code extensions
+su - "$USER" -c "code --install-extension ms-python.anaconda-extension-pack
+code --install-extension vscjava.vscode-java-pack
+code --install-extension PeterJausovec.vscode-docker
+code --install-extension johnpapa.angular-essentials
+code --install-extension robinbentley.sass-indented
+code --install-extension ms-vscode.cpptools
+code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension HookyQR.beautify
+code --install-extension ritwickdey.LiveServer
+code --install-extension jawandarajbir.react-vscode-extension-pack"
+
 #bash alias
 touch ~/.bash_aliases
 echo "neofetch" >> ~/.bash_aliases
