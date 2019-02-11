@@ -58,10 +58,8 @@ su -c "npm config set prefix '~/.npm-global'" $USER
 echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile
 source ~/.profile
 
-#su -c "shell command; shell command" $SUDO_USER 
-
 #sdkman
-#curl -s "https://get.sdkman.io" | bash
+#curl -s 'https://get.sdkman.io' | bash
 #wget -c https://flavio.tordini.org/files/minitube/minitube.deb
 
 #inode watch
