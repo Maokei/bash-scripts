@@ -32,6 +32,7 @@ sudo snap install kotlin --classic
 sudo snap install robo3t-snap
 sudo snap install postman
 sudo snap install insomnia
+sudo snap install ubuntu-make --classic
 
 #update
 sudo apt update
@@ -42,7 +43,7 @@ virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
 remmina remmina-plugin-rdp libfreerdp-plugins-standard mongodb peek asciio \
 mysql-server mysql-workbench postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar code powerline meld guake \
-ubuntu-restricted-extras gcc g++ make nodejs yarn ubuntu-make python3-pip wireshark tlp
+ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp
 
 #groups
 sudo usermod -aG docker ${USER}
