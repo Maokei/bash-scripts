@@ -85,6 +85,9 @@ echo "neofetch" >> ~/.bash_aliases
 #sdkman
 su -c "curl -s 'https://get.sdkman.io' | bash" $USER
 
+#secure mysql
+sudo mysql_secure_installation
+
 echo "Installation complete"
 echo "========================================="
 echo "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░"
