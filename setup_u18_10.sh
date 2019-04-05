@@ -33,6 +33,7 @@ sudo snap install robo3t-snap
 sudo snap install postman
 sudo snap install insomnia
 sudo snap install ubuntu-make --classic
+sudo snap install code --classic
 
 #update
 sudo apt update
@@ -42,7 +43,7 @@ sudo apt install -y git neofetch docker-ce virtualbox virtualbox-ext-pack \
 virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
 remmina remmina-plugin-rdp libfreerdp-plugins-standard mongodb peek asciio \
 mysql-server mysql-workbench default-jre postgresql postgresql-contrib tmux vlc zeal \
-htop tree ranger neovim p7zip p7zip-full p7zip-rar code powerline meld guake \
+htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline meld guake \
 ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp joe
 
 #groups
