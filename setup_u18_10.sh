@@ -77,7 +77,8 @@ code --install-extension ms-vscode.cpptools
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension HookyQR.beautify
 code --install-extension ritwickdey.LiveServer
-code --install-extension jawandarajbir.react-vscode-extension-pack"
+code --install-extension jawandarajbir.react-vscode-extension-pack
+code --install-extension xabikos.JavaScriptSnippets"
 
 #bash alias
 touch ~/.bash_aliases
