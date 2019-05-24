@@ -80,9 +80,12 @@ code --install-extension ritwickdey.LiveServer
 code --install-extension jawandarajbir.react-vscode-extension-pack
 code --install-extension xabikos.JavaScriptSnippets"
 
+su - "$USER" -c "
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"
 #bash alias
-touch ~/.bash_aliases
-echo "neofetch" >> ~/.bash_aliases
+su - "$USER" -c "touch ~/.bash_aliases"
+su - "$USER" -c "echo 'neofetch' >> ~/.bash_aliases"
 
 #sdkman
 su -c "curl -s 'https://get.sdkman.io' | bash" $USER
