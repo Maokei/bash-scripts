@@ -80,6 +80,8 @@ code --install-extension ritwickdey.LiveServer
 code --install-extension jawandarajbir.react-vscode-extension-pack
 code --install-extension xabikos.JavaScriptSnippets"
 
+su - "$USER" -c "pip3 install --user neovim"
+
 su - "$USER" -c "
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
