@@ -78,7 +78,8 @@ code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension HookyQR.beautify
 code --install-extension ritwickdey.LiveServer
 code --install-extension jawandarajbir.react-vscode-extension-pack
-code --install-extension xabikos.JavaScriptSnippets"
+code --install-extension xabikos.JavaScriptSnippets
+code --install-extension usernamehw.indent-one-space"
 
 su - "$USER" -c "pip3 install --user neovim"
 
