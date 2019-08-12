@@ -79,7 +79,11 @@ code --install-extension HookyQR.beautify
 code --install-extension ritwickdey.LiveServer
 code --install-extension jawandarajbir.react-vscode-extension-pack
 code --install-extension xabikos.JavaScriptSnippets
-code --install-extension usernamehw.indent-one-space"
+code --install-extension usernamehw.indent-one-space
+code --install-extension vscjava.vscode-java-pack
+code --install-extension Pivotal.vscode-spring-boot
+code --install-extension vscjava.vscode-spring-initializr
+code --install-extension vscjava.vscode-spring-boot-dashboard"
 
 su - "$USER" -c "pip3 install --user neovim"
 
