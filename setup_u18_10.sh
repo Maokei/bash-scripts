@@ -83,7 +83,8 @@ code --install-extension usernamehw.indent-one-space
 code --install-extension vscjava.vscode-java-pack
 code --install-extension Pivotal.vscode-spring-boot
 code --install-extension vscjava.vscode-spring-initializr
-code --install-extension vscjava.vscode-spring-boot-dashboard"
+code --install-extension vscjava.vscode-spring-boot-dashboard
+code --install-extension GabrielBB.vscode-lombok"
 
 su - "$USER" -c "pip3 install --user neovim"
 
