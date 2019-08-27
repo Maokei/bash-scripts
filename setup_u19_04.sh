@@ -49,17 +49,17 @@ ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp
 sudo usermod -aG docker ${USER}
 sudo usermod -aG vboxusers ${USER}
 
-echo "if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then" >> ~/.bashrc
-echo "    source /usr/share/powerline/bindings/bash/powerline.sh" >> ~/.bashrc
-echo "fi" >> ~/.bashrc
+sudo -u $USER echo "if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then" >> ~/.bashrc
+sudo -u $USER echo "    source /usr/share/powerline/bindings/bash/powerline.sh" >> ~/.bashrc
+sudo -u $USER echo "fi" >> ~/.bashrc
 
-su - $USER -c "mkdir ~/.npm-global"
-su - $USER -c "npm config set prefix '~/.npm-global'"
-su - $USER -c "echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile"
+sudo -u $USER mkdir ~/.npm-global
+sudo -u $USER npm config set prefix '~/.npm-global'
+sudo -u $USER echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile
 source ~/.profile
 
-su - $USER -c "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
-su - $USER -c "wget -c https://flavio.tordini.org/files/minitube/minitube.deb"
+sudo -u $USER wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+wget -c https://flavio.tordini.org/files/minitube/minitube.deb
 
 sudo apt install -y libxss1 libappindicator1 libindicator7
 sudo dpkg -i ./google-chrome*.deb
@@ -71,38 +71,37 @@ sudo systemctl enable tlp
 sudo systemctl enable mongodb
 
 #Vs code extensions
-su - $USER -c "code --install-extension ms-python.anaconda-extension-pack
-code --install-extension vscjava.vscode-java-pack
-code --install-extension PeterJausovec.vscode-docker
-code --install-extension johnpapa.angular-essentials
-code --install-extension robinbentley.sass-indented
-code --install-extension ms-vscode.cpptools
-code --install-extension msjsdiag.debugger-for-chrome
-code --install-extension HookyQR.beautify
-code --install-extension ritwickdey.LiveServer
-code --install-extension jawandarajbir.react-vscode-extension-pack
-code --install-extension xabikos.JavaScriptSnippets
-code --install-extension usernamehw.indent-one-space
-code --install-extension vscjava.vscode-java-pack
-code --install-extension Pivotal.vscode-spring-boot
-code --install-extension vscjava.vscode-spring-initializr
-code --install-extension vscjava.vscode-spring-boot-dashboard
-code --install-extension GabrielBB.vscode-lombok"
+sudo -u $USER code --install-extension ms-python.anaconda-extension-pack \
+code --install-extension vscjava.vscode-java-pack \
+code --install-extension PeterJausovec.vscode-docker \
+code --install-extension johnpapa.angular-essentials \
+code --install-extension robinbentley.sass-indented \
+code --install-extension ms-vscode.cpptools \
+code --install-extension msjsdiag.debugger-for-chrome \
+code --install-extension HookyQR.beautify \
+code --install-extension ritwickdey.LiveServer \
+code --install-extension jawandarajbir.react-vscode-extension-pack \
+code --install-extension xabikos.JavaScriptSnippets \
+code --install-extension usernamehw.indent-one-space \
+code --install-extension vscjava.vscode-java-pack \ 
+code --install-extension Pivotal.vscode-spring-boot \
+code --install-extension vscjava.vscode-spring-initializr \
+code --install-extension vscjava.vscode-spring-boot-dashboard \
+code --install-extension GabrielBB.vscode-lombok
 
-su - $USER -c "pip3 install --user neovim"
-
-su - $USER -c "
+sudo -u $USER pip3 install --user neovim \
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"
+
+
 #bash alias
-su - $USER -c "touch ~/.bash_aliases"
-su - $USER -c "echo 'neofetch' >> ~/.bash_aliases"
+sudo -u $USER touch ~/.bash_aliases
+sudo -u $USER echo 'neofetch' >> ~/.bash_aliases
 
 #gnome scaling
 #gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 
 #sdkman
-su -c "curl -s 'https://get.sdkman.io' | bash" $USER
+sudo -u $USER curl -s 'https://get.sdkman.io' | bash
 
 #secure mysql
 sudo mysql_secure_installation
