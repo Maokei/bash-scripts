@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Ubuntu 19.10 install script
+# Ubuntu 19.04 install script
 #
 
 sudo apt update
@@ -18,7 +18,7 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 sudo echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update
 
-#Docker no official release yet for 18.10
+#Docker no official release yet for 19.04
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
@@ -40,10 +40,10 @@ sudo apt update
 #install
 sudo apt install -y git neofetch docker-ce virtualbox virtualbox-ext-pack \
 virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
-remmina remmina-plugin-rdp libfreerdp-plugins-standard mongodb peek asciio \
-mysql-server mysql-workbench default-jre postgresql postgresql-contrib tmux vlc zeal \
+remmina remmina-plugin-rdp synaptic mongodb peek asciio \
+mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline meld guake \
-ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp joe
+ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp
 
 #groups
 sudo usermod -aG docker ${USER}
@@ -55,10 +55,14 @@ echo "fi" >> ~/.bashrc
 
 su - $USER -c "mkdir ~/.npm-global"
 su - $USER -c "npm config set prefix '~/.npm-global'"
-echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile
+su - $USER -c "echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile"
 source ~/.profile
 
-su - $UŚER -c "wget -c https://flavio.tordini.org/files/minitube/minitube.deb"
+su - $USER -c "wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+su - $USER -c "wget -c https://flavio.tordini.org/files/minitube/minitube.deb"
+
+sudo apt install -y libxss1 libappindicator1 libindicator7
+sudo dpkg -i ./google-chrome*.deb
 
 #inode watch
 sudo echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf
@@ -93,6 +97,9 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 #bash alias
 su - $USER -c "touch ~/.bash_aliases"
 su - $USER -c "echo 'neofetch' >> ~/.bash_aliases"
+
+#gnome scaling
+#gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
 
 #sdkman
 su -c "curl -s 'https://get.sdkman.io' | bash" $USER
