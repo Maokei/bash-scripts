@@ -2,6 +2,20 @@
 # Ubuntu 19.04 install script
 #
 
+# Check arguments
+for i in "$@" ; do
+    if [[ $i == "gnome" ]] ; then
+        echo "Setting gnome desktop"
+        GNOME=true
+        break
+    fi
+    if [[ $i == "kde" ]] ; then
+        echo "Setting kde desktop"
+        KDE=true
+        break
+    fi
+done
+
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 sudo add-apt-repository -y ppa:atareao/telegram
@@ -83,7 +97,7 @@ code --install-extension ritwickdey.LiveServer \
 code --install-extension jawandarajbir.react-vscode-extension-pack \
 code --install-extension xabikos.JavaScriptSnippets \
 code --install-extension usernamehw.indent-one-space \
-code --install-extension vscjava.vscode-java-pack \ 
+code --install-extension vscjava.vscode-java-pack \
 code --install-extension Pivotal.vscode-spring-boot \
 code --install-extension vscjava.vscode-spring-initializr \
 code --install-extension vscjava.vscode-spring-boot-dashboard \
@@ -97,8 +111,14 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 sudo -u $USER touch ~/.bash_aliases
 sudo -u $USER echo 'neofetch' >> ~/.bash_aliases
 
-#gnome scaling
-#gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling']"
+#desktop specific
+if [ -n "$GNOME" ]; then
+	echo "Desktop: Gnome"
+	sudo -u $USER gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling', 'scale-monitor-framebuffer']"
+	sudo -u $USER gsettings set org.gnome.desktop.interface enable-animations false
+	sudo apt install -y gnome-tweak-tool
+fi
+
 
 #sdkman
 sudo -u $USER curl -s 'https://get.sdkman.io' | bash
