@@ -109,6 +109,11 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 
 #bash alias
 sudo -u $USER touch ~/.bash_aliases
+sudo -u $USER echo "alias untar='tar -zxvf '" >> ~/.bash_aliases
+sudo -u $USER echo "alias www='python -m SimpleHTTPServer 8000'" >> ~/.bash_aliases
+sudo -u $USER echo "alias showGoverners='cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors'" >> ~/.bash_aliases
+sudo -u $USER echo "alias lowPerf='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'" >> ~/.bash_aliases
+sudo -u $USER echo "alias highPerf='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'" >> ~/.bash_aliases
 sudo -u $USER echo 'neofetch' >> ~/.bash_aliases
 
 #desktop specific
