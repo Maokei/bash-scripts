@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Ubuntu 19.04 install script
-#
 
 # Check arguments
 for i in "$@" ; do
@@ -105,7 +104,7 @@ code --install-extension vscjava.vscode-spring-boot-dashboard \
 code --install-extension GabrielBB.vscode-lombok
 
 sudo -u $USER pip3 install --user neovim \
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sudo -u $USER curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 
 #bash alias
