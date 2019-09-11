@@ -42,7 +42,7 @@ cd light
 sudo make install
 
 #bluetooth
-sudo apt install blueman
+sudo apt install -y blueman
 
 echo "Reboot for good measure"
 sudo reboot
