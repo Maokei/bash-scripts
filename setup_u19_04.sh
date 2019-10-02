@@ -122,7 +122,7 @@ if [ -n "$GNOME" ]; then
 	sudo -u $USER gsettings set org.gnome.mutter experimental-features "['x11-randr-fractional-scaling', 'scale-monitor-framebuffer']"
 	sudo -u $USER gsettings set org.gnome.desktop.interface enable-animations false
 	sudo -u $USER gsettings set org.gnome.desktop.background show-desktop-icons false
-	sudo apt install -y gnome-tweak-tool
+	sudo apt install -y gnome-tweak-tool chrome-gnome-shell
 fi
 
 
