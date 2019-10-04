@@ -78,6 +78,7 @@ wget -c https://flavio.tordini.org/files/minitube/minitube.deb
 sudo apt install -y libxss1 libappindicator1 libindicator7
 sudo dpkg -i ./google-chrome*.deb
 sudo dpkg -i ./minitube.deb
+rm *.deb
 
 #inode watch
 sudo echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf
