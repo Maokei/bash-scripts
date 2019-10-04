@@ -75,10 +75,11 @@ source ~/.profile
 sudo -u $USER wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 wget -c https://flavio.tordini.org/files/minitube/minitube.deb
 
-sudo apt install -y libxss1 libappindicator1 libindicator7
+
 sudo dpkg -i ./google-chrome*.deb
 sudo dpkg -i ./minitube.deb
 rm *.deb
+sudo apt install -f -y
 
 #inode watch
 sudo echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf
@@ -132,7 +133,7 @@ fi
 sudo -u $USER curl -s 'https://get.sdkman.io' | bash
 
 #secure mysql
-sudo mysql_secure_installation
+#sudo mysql_secure_installation
 
 echo "Installation complete"
 echo "========================================="
