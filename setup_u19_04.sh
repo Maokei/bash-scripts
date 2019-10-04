@@ -46,6 +46,7 @@ sudo snap install postman
 sudo snap install insomnia
 sudo snap install ubuntu-make --classic
 sudo snap install code --classic
+sudo snap install ripgrep --classic
 
 #update
 sudo apt update
