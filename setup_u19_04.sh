@@ -139,6 +139,9 @@ fi
 
 #sdkman
 sudo -u $USER curl -s 'https://get.sdkman.io' | bash
+#sdkman zsh
+sudo -u $USER echo "export SDKMAN_DIR=\"home/${USER}/sdkman\"" >> ~/.bashrc
+sudo -u $USER echo "[[ -s \"/home/${USER}/.sdkman/bin/sdkman-init.sh\" ]] && source \"/home/${USER}/.sdkman/bin/sdkman-init.sh\"" >> ~/.bashrc
 
 #secure mysql
 #sudo mysql_secure_installation
