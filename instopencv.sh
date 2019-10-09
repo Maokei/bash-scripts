@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-cvvVersion="4.1.1"
+cvVersion="4.1.1"
+cwd=$(pwd)
 
 rm -rf opencv/build
 rm -rf opencv_contrib/build
@@ -31,7 +32,7 @@ compileOpenCv () {
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
       -D BUILD_EXAMPLES=ON ..
 	make -j4
-	sudo make install
+	make install
 }
 
 cloneOpenCv () {
@@ -71,7 +72,7 @@ installDeps () {
 	libgtk2.0-dev libtbb-dev qt5-default libatlas-base-dev \
 	libfaac-dev libmp3lame-dev libtheora-dev libvorbis-dev libxvidcore-dev \
 	libopencore-amrnb-dev libopencore-amrwb-dev libavresample-dev \
-	x264 v4l-utils
+	x264 v4l-utils python3-venv
 
 	# Optional dependencies
 	sudo apt -y install libprotobuf-dev protobuf-compiler
@@ -81,13 +82,15 @@ installDeps () {
 
 installPythonLibs () {
 	# create virtual environment
-	python3 -m venv OpenCV-"$cvVersion"-py3
-	echo "# Virtual Environment Wrapper" >> ~/.bashrc
-	echo "alias workoncv-$cvVersion=\"source $cwd/OpenCV-$cvVersion-py3/bin/activate\"" >> ~/.bashrc
+	echo "Python environment"
+	echo "OpenCV-$cvVersion-py3"
+	python3 -m venv ~/OpenCV-"$cvVersion"-py3
+	echo "# Virtual Environment Wrapper" >> ~/.bash_aliases
+	echo "alias workoncv-$cvVersion=\"source $cwd/OpenCV-$cvVersion-py3/bin/activate\"" >> ~/.bash_aliases
 	source "$cwd"/OpenCV-"$cvVersion"-py3/bin/activate
 
 	# now install python libraries within this virtual environment
-	pip install wheel numpy scipy matplotlib scikit-image scikit-learn ipython
+	pip3 install wheel numpy scipy matplotlib scikit-image scikit-learn ipython
 
 	# quit virtual environment
 	deactivate
@@ -97,3 +100,4 @@ installDeps
 cloneOpenCv
 cloneOpenCvContrib
 compileOpenCv
+installPythonLibs
