@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+	#!/usr/bin/env bash
 # Ubuntu 19.04 install script
 
 # Check arguments
@@ -81,11 +81,13 @@ sudo -u $USER echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile
 source ~/.profile
 
 sudo -u $USER wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-wget -c https://flavio.tordini.org/files/minitube/minitube.deb
+wget -c https://flavio.tordini.org/files/minitube/minitube.deb \
+wget -c https://zoom.us/client/latest/zoom_amd64.deb
 
 
 sudo dpkg -i ./google-chrome*.deb
 sudo dpkg -i ./minitube.deb
+sudo dpkg -i ./zoom_amd64.deb
 rm *.deb
 sudo apt install -f -y
 
