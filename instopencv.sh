@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
-
 cvVersion="4.1.1"
 cwd=$(pwd)
 
 rm -rf opencv/build
 rm -rf opencv_contrib/build
 
-mkdir -p opencv
-mkdir -p opencv_contrib
-cd opencv 
-wget -c https://github.com/opencv/opencv/archive/4.1.1/opencv-4.1.1.tar.gz
-tar xf opencv-4.1.1.tar.gz
-cd ../opencv_contrib
-wget -c https://github.com/opencv/opencv_contrib/archive/4.1.1/opencv_contrib-4.1.1.tar.gz
+#mkdir -p opencv
+#mkdir -p opencv_contrib
+#cd opencv 
+#wget -c https://github.com/opencv/opencv/archive/4.1.1/opencv-4.1.1.tar.gz
+#tar xf opencv-4.1.1.tar.gz
+#cd ../opencv_contrib
+#wget -c https://github.com/opencv/opencv_contrib/archive/4.1.1/opencv_contrib-4.1.1.tar.gz
 
 
 compileOpenCv () {
@@ -78,6 +77,9 @@ installDeps () {
 	sudo apt -y install libprotobuf-dev protobuf-compiler
 	sudo apt -y install libgoogle-glog-dev libgflags-dev
 	sudo apt -y install libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
+	sudo apt -y install tesseract-ocr tesseract-ocr-all
+	
+	sudo ln -s /usr/include/eigen3/Eigen /usr/include/Eigen
 }
 
 installPythonLibs () {
@@ -86,8 +88,10 @@ installPythonLibs () {
 	echo "OpenCV-$cvVersion-py3"
 	python3 -m venv ~/OpenCV-"$cvVersion"-py3
 	echo "# Virtual Environment Wrapper" >> ~/.bash_aliases
-	echo "alias workoncv-$cvVersion=\"source $cwd/OpenCV-$cvVersion-py3/bin/activate\"" >> ~/.bash_aliases
-	source "$cwd"/OpenCV-"$cvVersion"-py3/bin/activate
+	#echo "alias workoncv-$cvVersion=\"source $cwd/OpenCV-$cvVersion-py3/bin/activate\"" >> ~/.bash_aliases
+	#source "$cwd"/OpenCV-"$cvVersion"-py3/bin/activate
+	echo "alias workoncv-$cvVersion=\"source ~/OpenCV-$cvVersion-py3/bin/activate\"" >> ~/.bash_aliases
+	~/OpenCV-"$cvVersion"-py3/bin/activate
 
 	# now install python libraries within this virtual environment
 	pip3 install wheel numpy scipy matplotlib scikit-image scikit-learn ipython
@@ -100,4 +104,5 @@ installDeps
 cloneOpenCv
 cloneOpenCvContrib
 compileOpenCv
+sudo rm /usr/include/Eigen
 installPythonLibs
