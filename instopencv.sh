@@ -19,16 +19,18 @@ compileOpenCv () {
 	mkdir -p build
 	cd build
 	#time to snuggle
+	#-D CMAKE_INSTALL_PREFIX=/usr/local \
 	cmake -D CMAKE_BUILD_TYPE=RELEASE \
-      -D CMAKE_INSTALL_PREFIX=$cwd/installation/OpenCV-"$cvVersion" \
+      -D CMAKE_INSTALL_PREFIX=~/opencv/OpenCV-"$cvVersion" \
       -D INSTALL_C_EXAMPLES=ON \
       -D INSTALL_PYTHON_EXAMPLES=ON \
       -D WITH_TBB=ON \
       -D WITH_V4L=ON \
       -D WITH_QT=ON \
       -D WITH_OPENGL=ON \
-      -D OPENCV_PYTHON3_INSTALL_PATH=$cwd/OpenCV-$cvVersion-py3/lib/python3.6/site-packages \
+      -D OPENCV_PYTHON3_INSTALL_PATH=~/OpenCV-$cvVersion-py3/lib/python3.7/site-packages \
       -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
+      -D OPENCV_ENABLE_NONFREE=ON \
       -D BUILD_EXAMPLES=ON ..
 	make -j4
 	make install
@@ -91,7 +93,7 @@ installPythonLibs () {
 	#echo "alias workoncv-$cvVersion=\"source $cwd/OpenCV-$cvVersion-py3/bin/activate\"" >> ~/.bash_aliases
 	#source "$cwd"/OpenCV-"$cvVersion"-py3/bin/activate
 	echo "alias workoncv-$cvVersion=\"source ~/OpenCV-$cvVersion-py3/bin/activate\"" >> ~/.bash_aliases
-	~/OpenCV-"$cvVersion"-py3/bin/activate
+	source ~/OpenCV-"$cvVersion"-py3/bin/activate
 
 	# now install python libraries within this virtual environment
 	pip3 install wheel numpy scipy matplotlib scikit-image scikit-learn ipython
@@ -103,6 +105,6 @@ installPythonLibs () {
 installDeps
 cloneOpenCv
 cloneOpenCvContrib
+installPythonLibs
 compileOpenCv
 sudo rm /usr/include/Eigen
-installPythonLibs
