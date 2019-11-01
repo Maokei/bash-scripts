@@ -119,6 +119,8 @@ code --install-extension GabrielBB.vscode-lombok
 sudo -u $USER pip3 install --user neovim \
 sudo -u $USER curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+#Joplin
+sudo -u $USER echo "wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash" 
 
 #bash alias
 sudo -u $USER touch ~/.bash_aliases
