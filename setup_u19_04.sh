@@ -1,4 +1,4 @@
-	#!/usr/bin/env bash
+#!/usr/bin/env bash
 # Ubuntu 19.04 install script
 
 # Check arguments
@@ -76,6 +76,9 @@ sudo -u $USER echo "if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; t
 sudo -u $USER echo "    source /usr/share/powerline/bindings/bash/powerline.sh" >> ~/.bashrc
 sudo -u $USER echo "fi" >> ~/.bashrc
 
+sudo -u $USER mkdir ~/.yarn-global
+sudo -u $USER yarn config set globa-dir ~/.yarn-global
+
 sudo -u $USER mkdir ~/.npm-global
 sudo -u $USER npm config set prefix '~/.npm-global'
 sudo -u $USER echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile
@@ -84,7 +87,6 @@ source ~/.profile
 sudo -u $USER wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 wget -c https://flavio.tordini.org/files/minitube/minitube.deb \
 wget -c https://zoom.us/client/latest/zoom_amd64.deb
-
 
 sudo dpkg -i ./google-chrome*.deb
 sudo dpkg -i ./minitube.deb
