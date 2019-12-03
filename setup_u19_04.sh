@@ -64,6 +64,8 @@ zsh zsh-syntax-highlighting zsh-theme-powerlevel9k
 sudo usermod -s /usr/bin/zsh $(whoami)
 sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
 sudo -u $USER echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+sudo -u $USER echo "SAVEHIST=500" >> ~/.zshrc
+sudo -u $USER echo "HISTFILE=~/.zsh_history" >> ~/.zshrc
 sudo -u $USER echo "if [ -f ~/.bash_aliases ]; then" >> ~/.zshrc
 sudo -u $USER echo "    . ~/.bash_aliases" >> ~/.zshrc
 sudo -u $USER echo "fi" >> ~/.zshrc
