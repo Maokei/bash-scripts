@@ -35,6 +35,11 @@ sudo apt update
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
+#Brave brower
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+
+
 #install snaps
 sudo snap install intellij-idea-community --classic
 sudo snap install eclipse --edge --classic
@@ -59,7 +64,7 @@ remmina remmina-plugin-rdp synaptic mongodb peek asciio feh \
 mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
 ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp \
-zsh zsh-syntax-highlighting zsh-theme-powerlevel9k 
+zsh zsh-syntax-highlighting zsh-theme-powerlevel9k brave-browser
 
 sudo usermod -s /usr/bin/zsh $(whoami)
 sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
