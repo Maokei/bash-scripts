@@ -58,13 +58,14 @@ sudo snap install cool-retro-term --edge --classic
 sudo apt update
 
 #install
-sudo apt install -y git neofetch docker-ce virtualbox virtualbox-ext-pack \
+sudo apt install -y git neofetch virtualbox virtualbox-ext-pack \
 virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
 remmina remmina-plugin-rdp synaptic mongodb peek asciio feh \
 mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
 ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp \
-zsh zsh-syntax-highlighting zsh-theme-powerlevel9k brave-browser
+zsh zsh-syntax-highlighting zsh-theme-powerlevel9k brave-browser \
+docker-ce docker-ce-cli containerd.io
 
 sudo usermod -s /usr/bin/zsh $(whoami)
 sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
