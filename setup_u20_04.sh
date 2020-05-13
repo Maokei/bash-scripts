@@ -13,6 +13,11 @@ for i in "$@" ; do
         KDE=true
         break
     fi
+    if [[ $i == "zsh" ]] ; then
+        echo "Setting zsh shell"
+        ZSH=true
+        break
+    fi
 done
 
 sudo apt update
@@ -35,6 +40,7 @@ sudo apt update
 #Docker
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 #sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
 #Brave brower
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
@@ -68,14 +74,14 @@ ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp \
 zsh zsh-syntax-highlighting zsh-theme-powerlevel9k brave-browser \
 docker-ce docker-ce-cli containerd.io
 
-sudo usermod -s /usr/bin/zsh $(whoami)
-sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
-sudo -u $USER echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
-sudo -u $USER echo "SAVEHIST=500" >> ~/.zshrc
-sudo -u $USER echo "HISTFILE=~/.zsh_history" >> ~/.zshrc
-sudo -u $USER echo "if [ -f ~/.bash_aliases ]; then" >> ~/.zshrc
-sudo -u $USER echo "    . ~/.bash_aliases" >> ~/.zshrc
-sudo -u $USER echo "fi" >> ~/.zshrc
+#sudo usermod -s /usr/bin/zsh $(whoami)
+#sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
+#sudo -u $USER echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ~/.zshrc
+#sudo -u $USER echo "SAVEHIST=500" >> ~/.zshrc
+#sudo -u $USER echo "HISTFILE=~/.zsh_history" >> ~/.zshrc
+#sudo -u $USER echo "if [ -f ~/.bash_aliases ]; then" >> ~/.zshrc
+#sudo -u $USER echo "    . ~/.bash_aliases" >> ~/.zshrc
+#sudo -u $USER echo "fi" >> ~/.zshrc
 
 #groups
 sudo usermod -aG docker ${USER}
@@ -160,8 +166,8 @@ fi
 #sdkman
 sudo -u $USER curl -s 'https://get.sdkman.io' | bash
 #sdkman zsh
-sudo -u $USER echo "export SDKMAN_DIR=\"home/${USER}/sdkman\"" >> ~/.zshrc
-sudo -u $USER echo "[[ -s \"/home/${USER}/.sdkman/bin/sdkman-init.sh\" ]] && source \"/home/${USER}/.sdkman/bin/sdkman-init.sh\"" >> ~/.zshrc
+#sudo -u $USER echo "export SDKMAN_DIR=\"home/${USER}/sdkman\"" >> ~/.zshrc
+#sudo -u $USER echo "[[ -s \"/home/${USER}/.sdkman/bin/sdkman-init.sh\" ]] && source \"/home/${USER}/.sdkman/bin/sdkman-init.sh\"" >> ~/.zshrc
 
 #secure mysql
 #sudo mysql_secure_installation
