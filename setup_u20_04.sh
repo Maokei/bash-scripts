@@ -25,7 +25,7 @@ sudo apt install -y apt-transport-https ca-certificates curl software-properties
 sudo add-apt-repository -y ppa:atareao/telegram
 sudo add-apt-repository -y ppa:remmina-ppa-team/remmina-next
 sudo add-apt-repository -y ppa:peek-developers/daily
-sudo add-apt-repository ppa:thomas-schiex/blender
+sudo add-apt-repository -y ppa:thomas-schiex/blender
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
@@ -45,7 +45,6 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 #Brave brower
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-
 
 #install snaps
 sudo snap install intellij-idea-community --classic
