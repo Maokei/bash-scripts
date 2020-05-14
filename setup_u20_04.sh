@@ -143,10 +143,16 @@ code --install-extension ms-dotnettools.csharp \
 code --install-extension geequlim.godot-tools \
 code --install-extension rust-lang.rust \
 code --install-extension mathiasfrohlich.Kotlin \
-code --install-extension Unity.unity-debug
+code --install-extension Unity.unity-debug \
+code --install-extension justjavac.vscode-deno
 
 sudo -u $USER pip3 install --user neovim \
 sudo -u $USER curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+#Deno
+sudo -u $USER curl -fsSL https://deno.land/x/install/install.sh | sh
+sudo -u $USER echo "export DENO_INSTALL=\"/home/$USER/.deno\"" >> ~/.bash_profile
+sudo -u $USER echo "export PATH=\"$DENO_INSTALL/bin:$PATH\"" >> ~/.bash_profile
 
 #Joplin
 sudo -u $USER wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
