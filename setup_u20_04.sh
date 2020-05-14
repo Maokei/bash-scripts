@@ -25,11 +25,12 @@ sudo apt install -y apt-transport-https ca-certificates curl software-properties
 sudo add-apt-repository -y ppa:atareao/telegram
 sudo add-apt-repository -y ppa:remmina-ppa-team/remmina-next
 sudo add-apt-repository -y ppa:peek-developers/daily
-sudo add-apt-repository ppa:thomas-schiex/blender
+sudo add-apt-repository -y ppa:thomas-schiex/blender
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+rm microsoft.gpg
 
 #Nodejs
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
@@ -46,6 +47,9 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
+#Dotnet core
+sudo -u $USER wget -c https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i ./packages-microsoft-prod.deb
 
 #install snaps
 sudo snap install intellij-idea-community --classic
@@ -72,7 +76,7 @@ mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
 ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp \
 zsh zsh-syntax-highlighting zsh-theme-powerlevel9k brave-browser \
-docker-ce docker-ce-cli containerd.io
+docker-ce docker-ce-cli containerd.io emacs kdiff3 gpg dotnet-sdk-3.1
 
 #sudo usermod -s /usr/bin/zsh $(whoami)
 #sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
@@ -101,11 +105,13 @@ source ~/.profile
 
 sudo -u $USER wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 wget -c https://flavio.tordini.org/files/minitube/minitube.deb \
-wget -c https://zoom.us/client/latest/zoom_amd64.deb
+wget -c https://zoom.us/client/latest/zoom_amd64.deb \
+wget -c https://steamcdn-a.akamaihd.net/client/installer/steam.deb
 
 sudo dpkg -i ./google-chrome*.deb
 sudo dpkg -i ./minitube.deb
 sudo dpkg -i ./zoom_amd64.deb
+sudo dpkg -i ./steam*.deb
 rm *.deb
 sudo apt install -f -y
 
@@ -132,13 +138,21 @@ code --install-extension vscjava.vscode-java-pack \
 code --install-extension Pivotal.vscode-spring-boot \
 code --install-extension vscjava.vscode-spring-initializr \
 code --install-extension vscjava.vscode-spring-boot-dashboard \
-code --install-extension GabrielBB.vscode-lombok
+code --install-extension GabrielBB.vscode-lombok \
+code --install-extension ms-dotnettools.csharp \
+code --install-extension geequlim.godot-tools \
+code --install-extension rust-lang.rust \
+code --install-extension mathiasfrohlich.Kotlin \
+code --install-extension Unity.unity-debug
 
 sudo -u $USER pip3 install --user neovim \
 sudo -u $USER curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 #Joplin
-sudo -u $USER echo "wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash" 
+sudo -u $USER wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
+
+#emacs
+sudo -u $USER git clone https://github.com/syl20bnr/spacemacs -b develop ~/.emacs.d
 
 #bash alias
 sudo -u $USER touch ~/.bash_aliases
@@ -162,6 +176,8 @@ if [ -n "$GNOME" ]; then
 	sudo apt install -y gnome-tweak-tool chrome-gnome-shell
 fi
 
+#Turnoff dotnet core telemetry
+sudo -u $USER echo "export DOTNET_CLI_TELEMETRY_OPTOUT=1" >> ~/.bashrc
 
 #sdkman
 sudo -u $USER curl -s 'https://get.sdkman.io' | bash
