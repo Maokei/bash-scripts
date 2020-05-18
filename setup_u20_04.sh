@@ -101,7 +101,7 @@ sudo -u $USER echo 'export PATH="$PATH:$(yarn global bin)"' >> ~/.bash_profile
 
 sudo -u $USER mkdir ~/.npm-global
 sudo -u $USER npm config set prefix '~/.npm-global'
-sudo -u $USER echo 'export PATH="$PATH:~/.npm-global/bin"' >> ~/.bash_profile
+sudo -u $USER echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile
 source ~/.profile
 
 sudo -u $USER wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
