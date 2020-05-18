@@ -101,7 +101,7 @@ sudo -u $USER echo 'export PATH="$PATH:$(yarn global bin)"' >> ~/.bash_profile
 
 sudo -u $USER mkdir ~/.npm-global
 sudo -u $USER npm config set prefix '~/.npm-global'
-sudo -u $USER echo 'PATH=~/.npm-global/bin:$PATH' >> ~/.profile
+sudo -u $USER echo 'export PATH="$PATH:~/.npm-global/bin"' >> ~/.bash_profile
 source ~/.profile
 
 sudo -u $USER wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
@@ -153,7 +153,7 @@ sudo -u $USER curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
 #Deno
 sudo -u $USER curl -fsSL https://deno.land/x/install/install.sh | sh
 sudo -u $USER echo "export DENO_INSTALL=\"/home/$USER/.deno\"" >> ~/.bash_profile
-sudo -u $USER echo "export PATH=\"$DENO_INSTALL/bin:$PATH\"" >> ~/.bash_profile
+sudo -u $USER echo 'export PATH="$DENO_INSTALL/bin:$PATH"' >> ~/.bash_profile
 
 #Joplin
 sudo -u $USER wget -O - https://raw.githubusercontent.com/laurent22/joplin/master/Joplin_install_and_update.sh | bash
