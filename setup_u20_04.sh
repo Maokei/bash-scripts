@@ -96,7 +96,7 @@ sudo -u $USER echo "    source /usr/share/powerline/bindings/bash/powerline.sh" 
 sudo -u $USER echo "fi" >> ~/.bashrc
 
 sudo -u $USER mkdir ~/.yarn-global
-sudo -u $USER yarn config set globa-dir ~/.yarn-global
+sudo -u $USER yarn config set global-folder ~/.yarn-global
 sudo -u $USER echo 'export PATH="$PATH:$(yarn global bin)"' >> ~/.bash_profile
 
 sudo -u $USER mkdir ~/.npm-global
