@@ -21,7 +21,7 @@ for i in "$@" ; do
 done
 
 sudo apt update
-sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg ca-certificates
 sudo add-apt-repository -y ppa:atareao/telegram
 sudo add-apt-repository -y ppa:remmina-ppa-team/remmina-next
 sudo add-apt-repository -y ppa:peek-developers/daily
@@ -51,6 +51,10 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable ma
 sudo -u $USER wget -c https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i ./packages-microsoft-prod.deb
 
+#Mono
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+
 #install snaps
 sudo snap install intellij-idea-community --classic
 sudo snap install eclipse --edge --classic
@@ -76,7 +80,7 @@ mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
 ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp \
 zsh zsh-syntax-highlighting zsh-theme-powerlevel9k brave-browser \
-docker-ce docker-ce-cli containerd.io emacs kdiff3 gpg dotnet-sdk-3.1
+docker-ce docker-ce-cli containerd.io emacs kdiff3 gpg dotnet-sdk-3.1 mono-complete
 
 #sudo usermod -s /usr/bin/zsh $(whoami)
 #sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
