@@ -141,6 +141,7 @@ code --install-extension xabikos.JavaScriptSnippets \
 code --install-extension usernamehw.indent-one-space \
 code --install-extension vscjava.vscode-java-pack \
 code --install-extension Pivotal.vscode-boot-dev-pack \
+code --install-extension jhipster \
 code --install-extension GabrielBB.vscode-lombok \
 code --install-extension ms-dotnettools.csharp \
 code --install-extension geequlim.godot-tools \
