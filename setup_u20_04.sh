@@ -129,7 +129,6 @@ sudo systemctl enable mongodb
 
 #Vs code extensions
 sudo -u $USER code --install-extension ms-python.anaconda-extension-pack \
-code --install-extension vscjava.vscode-java-pack \
 code --install-extension PeterJausovec.vscode-docker \
 code --install-extension johnpapa.angular-essentials \
 code --install-extension robinbentley.sass-indented \
@@ -141,9 +140,7 @@ code --install-extension jawandarajbir.react-vscode-extension-pack \
 code --install-extension xabikos.JavaScriptSnippets \
 code --install-extension usernamehw.indent-one-space \
 code --install-extension vscjava.vscode-java-pack \
-code --install-extension Pivotal.vscode-spring-boot \
-code --install-extension vscjava.vscode-spring-initializr \
-code --install-extension vscjava.vscode-spring-boot-dashboard \
+code --install-extension Pivotal.vscode-boot-dev-pack \
 code --install-extension GabrielBB.vscode-lombok \
 code --install-extension ms-dotnettools.csharp \
 code --install-extension geequlim.godot-tools \
