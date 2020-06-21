@@ -48,7 +48,7 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 
 #Dotnet core
-sudo -u $USER wget -c https://packages.microsoft.com/config/ubuntu/19.10/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo -u $USER wget -c wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i ./packages-microsoft-prod.deb
 
 #Mono
@@ -59,7 +59,6 @@ echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sud
 sudo snap install intellij-idea-community --classic
 sudo snap install eclipse --edge --classic
 sudo snap install slack --classic
-sudo snap install notepad-plus-plus --classic
 sudo snap install kotlin --classic
 sudo snap install robo3t-snap
 sudo snap install postman
