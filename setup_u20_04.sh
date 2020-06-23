@@ -72,7 +72,7 @@ sudo snap install cool-retro-term --edge --classic
 sudo apt update
 
 #install
-sudo apt install -y git neofetch virtualbox virtualbox-ext-pack \
+sudo apt install -y git neofetch virtualbox virtualbox-ext-pack pavucontrol \
 virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
 remmina remmina-plugin-rdp synaptic mongodb peek asciio feh \
 mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
