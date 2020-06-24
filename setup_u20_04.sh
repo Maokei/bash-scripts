@@ -77,8 +77,7 @@ virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
 remmina remmina-plugin-rdp synaptic mongodb peek asciio feh \
 mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
-ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp \
-zsh zsh-syntax-highlighting zsh-theme-powerlevel9k brave-browser \
+ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp brave-browser \
 docker-ce docker-ce-cli containerd.io emacs kdiff3 gpg dotnet-sdk-3.1 mono-complete
 
 #sudo usermod -s /usr/bin/zsh $(whoami)
@@ -184,6 +183,12 @@ if [ -n "$GNOME" ]; then
 	sudo -u $USER gsettings set org.freedesktop.Tracker.Miner.Files enable-monitors false
 	sudo -u $USER tracker reset --hard
 	sudo apt install -y gnome-tweak-tool chrome-gnome-shell
+fi
+
+# ZSH
+if [ -n "$ZSH" ]; then
+	echo "ZSH"
+	sudo apt install -y zsh zsh-syntax-highlighting zsh-theme-powerlevel9k
 fi
 
 #Turnoff dotnet core telemetry
