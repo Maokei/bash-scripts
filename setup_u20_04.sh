@@ -68,6 +68,7 @@ sudo snap install insomnia
 sudo snap install ubuntu-make --classic
 sudo snap install code --classic
 sudo snap install ripgrep --classic
+sudo snap install microk8s --classic 
 
 #update
 sudo apt update
@@ -94,6 +95,7 @@ slimbookbattery
 #groups
 sudo usermod -aG docker ${USER}
 sudo usermod -aG vboxusers ${USER}
+sudo usermod -a -G microk8s ${USER}
 
 sudo -u $USER echo "if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then" >> ~/.bashrc
 sudo -u $USER echo "    source /usr/share/powerline/bindings/bash/powerline.sh" >> ~/.bashrc
