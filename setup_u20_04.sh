@@ -42,6 +42,8 @@ sudo apt update
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 
+#slimbook
+sudo add-apt-repository ppa:slimbook/slimbook
 
 #Brave brower
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
@@ -72,13 +74,14 @@ sudo snap install cool-retro-term --edge --classic
 sudo apt update
 
 #install
-sudo apt install -y git neofetch virtualbox virtualbox-ext-pack pavucontrol \
-virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
+sudo apt install -y git neofetch pavucontrol \
+virtualbox virtualbox-ext-pack virtualbox-guest-additions-iso virtualbox-guest-dkms linux-headers-virtual \
 remmina remmina-plugin-rdp synaptic mongodb peek asciio feh qgis net-tools \
 mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
 ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp brave-browser \
-docker-ce docker-ce-cli containerd.io emacs kdiff3 gpg dotnet-sdk-3.1 mono-complete
+docker-ce docker-ce-cli containerd.io emacs kdiff3 gpg dotnet-sdk-3.1 mono-complete \
+slimbookbattery
 
 #sudo usermod -s /usr/bin/zsh $(whoami)
 #sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
