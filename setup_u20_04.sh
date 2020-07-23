@@ -68,7 +68,6 @@ sudo snap install insomnia
 sudo snap install ubuntu-make --classic
 sudo snap install code --classic
 sudo snap install ripgrep --classic
-sudo snap install cool-retro-term --edge --classic
 
 #update
 sudo apt update
