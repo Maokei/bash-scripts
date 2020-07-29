@@ -80,7 +80,7 @@ remmina remmina-plugin-rdp synaptic mongodb peek asciio feh qgis net-tools \
 mysql-server default-jre postgresql postgresql-contrib tmux vlc zeal \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
 ubuntu-restricted-extras gcc g++ make nodejs yarn python3-pip wireshark tlp brave-browser \
-docker-ce docker-ce-cli containerd.io emacs kdiff3 gpg dotnet-sdk-3.1 mono-complete \
+docker-ce docker-ce-cli docker-compose containerd.io emacs kdiff3 gpg dotnet-sdk-3.1 mono-complete \
 slimbookbattery
 
 #sudo usermod -s /usr/bin/zsh $(whoami)
