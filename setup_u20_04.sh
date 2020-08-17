@@ -96,7 +96,7 @@ slimbookbattery
 #groups
 sudo usermod -aG docker ${USER}
 sudo usermod -aG vboxusers ${USER}
-sudo usermod -a -G microk8s ${USER}
+sudo usermod -aG microk8s ${USER}
 
 sudo -u $USER echo "if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then" >> ~/.bashrc
 sudo -u $USER echo "    source /usr/share/powerline/bindings/bash/powerline.sh" >> ~/.bashrc
