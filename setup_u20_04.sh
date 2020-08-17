@@ -54,6 +54,7 @@ sudo -u $USER wget -c wget https://packages.microsoft.com/config/ubuntu/20.04/pa
 sudo dpkg -i ./packages-microsoft-prod.deb
 
 #Mono
+#sudo systemctl disable mono-xsp4.service
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
 
@@ -205,7 +206,7 @@ sudo -u $USER curl -s 'https://get.sdkman.io' | bash
 #sudo -u $USER echo "[[ -s \"/home/${USER}/.sdkman/bin/sdkman-init.sh\" ]] && source \"/home/${USER}/.sdkman/bin/sdkman-init.sh\"" >> ~/.zshrc
 
 #secure mysql
-#sudo mysql_secure_installation
+#sudo mysql_secure_installation:1
 
 echo "Installation complete"
 echo "========================================="
