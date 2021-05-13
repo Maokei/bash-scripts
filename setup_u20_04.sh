@@ -206,7 +206,7 @@ sudo -u $USER curl -s 'https://get.sdkman.io' | bash
 #sudo -u $USER echo "[[ -s \"/home/${USER}/.sdkman/bin/sdkman-init.sh\" ]] && source \"/home/${USER}/.sdkman/bin/sdkman-init.sh\"" >> ~/.zshrc
 
 #secure mysql
-#sudo mysql_secure_installation:1
+#sudo mysql_secure_installation
 
 echo "Installation complete"
 echo "========================================="
