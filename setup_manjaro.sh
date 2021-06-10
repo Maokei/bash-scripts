@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 sudo pacman -Syu
-sudo pacman -S base-devel neofetch docker ruby nvm
+sudo pacman -S base-devel neofetch docker ruby nvm tlp
 
 sudo usermod -aG docker ${USER}
 sudo systemctl enable docker.service
+sudo systemctl enable tlp --now
 
 sudo snap install eclipse --edge --classic
 sudo snap install intellij-idea-ultimate --classic
