@@ -30,6 +30,6 @@ source ~/.bash_profile
 
 sudo -u $USER pip3 install --user neovim 
 
-sudo -u $USER echo "export DOTNET_CLI_TELEMETRY_OPTOUT=1" >> ~/.bashrc
+sudo -u $USER echo "export DOTNET_CLI_TELEMETRY_OPTOUT=1" >> ~/.zshrc
 sudo -u $USER curl -s 'https://get.sdkman.io' | bash
 
