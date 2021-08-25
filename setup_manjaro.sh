@@ -33,7 +33,7 @@ if [ "$distro" == "arch" ]; then
 	rm -rf snapd
 	sudo systemctl enable --now snapd.socket
 	sudo ln -s /var/lib/snapd/snap /snap
-
+	sudo snap install snapd
 fi 
 
 sudo usermod -aG docker ${USER}
