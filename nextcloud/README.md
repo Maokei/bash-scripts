@@ -18,3 +18,5 @@ On host add cron job: `crontab -e`
 Add the following line at the end to execute it every five minutes:
 `*/5 * * * * docker exec -u www-data nextcloud php cron.php`
 
+## ARMV7
+[libseccomp](http://ftp.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.3-2_armhf.deb)
