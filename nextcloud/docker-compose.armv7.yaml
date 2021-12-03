@@ -23,7 +23,7 @@ services:
       - NEXTCLOUD_ADMIN_PASSWORD=$NC_ADMIN_PW
       - NEXTCLOUD_TRUSTED_DOMAINS=$NC_TRUSTED
   mariadb:
-    image: "linuxserver/mariadb:latest"
+    image: "linuxserver/mariadb:alpine"
     container_name: nextcloud_mariadb
 #    ports:
 #      - 3306:3306
