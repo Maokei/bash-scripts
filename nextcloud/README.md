@@ -19,4 +19,5 @@ Add the following line at the end to execute it every five minutes:
 `*/5 * * * * docker exec -u www-data nextcloud php cron.php`
 
 ## ARMV7
+[linuxservers.io - libseccomp2](https://docs.linuxserver.io/faq#libseccomp)
 [libseccomp](http://ftp.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.3-2_armhf.deb)
