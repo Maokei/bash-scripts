@@ -15,7 +15,6 @@ wallpapers=(
     $wallpaper_path/*.bmp
     $wallpaper_path/*.svg
 )
-echo "$wallpapers"
 # get array size
 # wallpapers_size=${#wallpapers[*]}
 
