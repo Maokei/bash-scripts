@@ -6,7 +6,7 @@ config_name=wallpaper.conf
 config_folder=$HOME/.config/environment.d/
 install_folder=$HOME/.config/systemd/user
 install_target="${install_folder}/${service_name}"
-config_target="${install_folder}/${service_name}"
+config_target="${config_folder}/${config_name}"
 
 shopt -s nullglob
 # store all the image file names in wallpapers array
