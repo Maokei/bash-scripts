@@ -71,28 +71,30 @@ runDaemon() {
 	done
 }
 
+if [ $# -eq 0 ]; then
+	echo "-----------------------------------"
+	echo "	       M A I N - M E N U"
+	echo "-----------------------------------"
+	echo "1: change. Change wallpaper"
+	echo "2: install. Install script"
+	echo "3: uninstall. Uninstall script"
+	echo "4: daemon. Run daemon"
+	echo "-----------------------------------"
+fi
 
-echo "-----------------------------------"
-echo "	       M A I N - M E N U"
-echo "-----------------------------------"
-echo "1: change. Change wallpaper"
-echo "2: install. Install script"
-echo "3: uninstall. Uninstall script"
-echo "4: daemon. Run daemon"
-echo "-----------------------------------"
 case "$1" in
-   change|1)
-      changeWallpaper
-   ;;
-   install|2)
-      installScript
-   ;;
-   uninstall|3)
-      installScript
-   ;;
-   daemon|4)
-      runDaemon
-   ;;
-   *)
-      echo "Usage: $0 {change|install|uninstall|daemon}"
+  change|1)
+		changeWallpaper
+  ;;
+  install|2)
+		installScript
+	;;
+	uninstall|3)
+		installScript
+	;;
+	daemon|4)
+		runDaemon
+	;;
+  *)
+	echo "Usage: $0 {change|install|uninstall|daemon}"
 esac
