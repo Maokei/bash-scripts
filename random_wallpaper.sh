@@ -67,7 +67,7 @@ runDaemon() {
 	while true
 	do
   	changeWallpaper
-  	sleep 1m
+  	sleep 15m
 	done
 }
 
