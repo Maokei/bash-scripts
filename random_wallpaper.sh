@@ -22,12 +22,14 @@ setupService() {
 Description=Random wallpaper
 
 [Service]
+StartLimitInterval=0
 ExecStart=${SCRIPT} daemon
 StandardOutput=journal
 Restart=on-failure
+#Restart=always
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
 EOF
 }
 
@@ -47,10 +49,12 @@ installScript() {
 }
 
 setWallpaper() {
-  echo "Setting wallpaper: $1"
+	escaped=$(echo "${file}" | sed -e 's/ /\\ /')
+  echo "Setting wallpaper for desktop: '$DESKTOP_SESSION' IMG: $escaped"
   if [ "$DESKTOP_SESSION" == "gnome" ]; then
-    gsettings set org.gnome.desktop.background picture-uri "${file}"
+		gsettings set org.gnome.desktop.background picture-uri "file://$file"
   fi
+	echo "end of setWallpaper"
 }
 
 changeWallpaper() {
@@ -64,6 +68,12 @@ changeWallpaper() {
 }
 
 runDaemon() {
+	if [ -z "$DESKTOP_SESSION" ]; then
+		echo "Desktop session in not yet set restarting soon!"
+		sleep 30
+		systemctl --user restart $service_name
+	fi
+	
 	while true
 	do
   	changeWallpaper
