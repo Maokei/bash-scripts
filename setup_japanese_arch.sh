@@ -6,6 +6,11 @@ install_fcitx() {
   echo "GTK_IM_MODULE=fcitx" >> ~/.profile
   echo "QT_IM_MODULE=fcitx" >> ~/.profile
   echo "XMODIFIERS=@im=fcitx" >> ~/.profile
+  
+  echo "GTK_IM_MODULE DEFAULT=fcitx" >> ~/.pam_environment
+  echo "QT_IM_MODULE  DEFAULT=fcitx" >> ~/.pam_environment
+  echo "QT_IM_MODULE  DEFAULT=fcitx" >> ~/.pam_environment
+
   sudo pacman -S --noconfirm fcitx5 fcitx5-configtool \
   fcitx5-gtk fcitx5-mozc fcitx5-qt
 }
