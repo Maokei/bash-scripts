@@ -54,6 +54,7 @@ setWallpaper() {
   if [ "$DESKTOP_SESSION" == "gnome" ]; then
 		gsettings set org.gnome.desktop.background picture-uri "file://$file"
   fi
+  # gsettings get org.gnome.desktop.background picture-uri
 }
 
 changeWallpaper() {
