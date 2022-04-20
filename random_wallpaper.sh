@@ -51,10 +51,19 @@ installScript() {
 setWallpaper() {
 	escaped=$(echo "${file}" | sed -e 's/ /\\ /')
   echo "Setting wallpaper for desktop: '$DESKTOP_SESSION' IMG: $escaped"
-  if [ "$DESKTOP_SESSION" == "gnome" ]; then
-		gsettings set org.gnome.desktop.background picture-uri "file://$file"
-  fi
-  # gsettings get org.gnome.desktop.background picture-uri
+	case $DESKTOP_SESSION in
+		gnome)
+			echo -n "Gnome"
+			gsettings set org.gnome.desktop.background picture-uri "file://$file"
+			# gsettings get org.gnome.desktop.background picture-uri
+			;;
+		sway)
+			echo -n "Sway"
+			;;
+		*)
+			echo -n "Unknown desktop session: $DESKTOP_SESSION"
+			;;
+	esac
 }
 
 changeWallpaper() {
