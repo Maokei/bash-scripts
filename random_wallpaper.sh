@@ -60,6 +60,9 @@ setWallpaper() {
 		sway)
 			echo -n "Sway"
 			;;
+		plasmawayland | plasma )
+			echo -n "Kde plasma"
+			;;
 		*)
 			echo -n "Unknown desktop session: $DESKTOP_SESSION"
 			;;
