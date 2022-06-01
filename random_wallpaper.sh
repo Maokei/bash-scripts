@@ -52,7 +52,7 @@ setWallpaper() {
 	escaped=$(echo "${file}" | sed -e 's/ /\\ /')
   echo "Setting wallpaper for desktop: '$DESKTOP_SESSION' IMG: $escaped"
 	case $DESKTOP_SESSION in
-		gnome)
+		gnome | gnome-xorg)
 			echo -n "Gnome"
 			gsettings set org.gnome.desktop.background picture-uri "file://$file"
 			# gsettings get org.gnome.desktop.background picture-uri
