@@ -8,7 +8,7 @@ do
         d) destination=${OPTARG};;
     esac
 done
-echo "Source, baking up too: $source"
+echo "Source, backing up too: $source"
 echo "Destination, backing up from: $destination"
 
 
