@@ -64,7 +64,7 @@ synaptic peek feh qgis brave-browser \
 tmux vlc zeal gimp krita \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
 ubuntu-restricted-extras gcc g++ make python3-pip wireshark brave-browser \
-docker-ce docker-ce-cli containerd.io docker-compose-plugin gpg rustc
+docker-ce docker-ce-cli containerd.io docker-compose-plugin gpg rustc fuse
 
 #sudo usermod -s /usr/bin/zsh $(whoami)
 #sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
