@@ -20,6 +20,8 @@ for i in "$@" ; do
     fi
 done
 
+sudo add-apt-repository -y universe
+
 sudo apt update
 sudo apt install -y flatpak gnome-software-plugin-flatpak gnome-software
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg ca-certificates lsb-release
@@ -64,7 +66,7 @@ synaptic peek feh qgis brave-browser \
 tmux vlc zeal gimp krita \
 htop tree ranger neovim p7zip p7zip-full p7zip-rar powerline fonts-powerline meld guake \
 ubuntu-restricted-extras gcc g++ make python3-pip wireshark brave-browser \
-docker-ce docker-ce-cli containerd.io docker-compose-plugin gpg rustc fuse
+docker-ce docker-ce-cli containerd.io docker-compose-plugin gpg rustc libfuse2
 
 #sudo usermod -s /usr/bin/zsh $(whoami)
 #sudo -u $USER echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> ~/.zshrc
