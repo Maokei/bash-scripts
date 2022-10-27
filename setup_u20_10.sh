@@ -23,7 +23,7 @@ done
 sudo add-apt-repository -y universe
 
 sudo apt update
-sudo apt install -y flatpak gnome-software-plugin-flatpak gnome-software
+sudo apt install -y flatpak gnome-software gnome-software-plugin-flatpak 
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg ca-certificates lsb-release
 sudo add-apt-repository -y ppa:remmina-ppa-team/remmina-next
 
