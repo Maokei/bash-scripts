@@ -59,6 +59,8 @@ sudo snap install code --classic
 sudo snap install ripgrep --classic
 sudo snap install microk8s --classic
 sudo snap install telegram-desktop
+sudo snap install blender --classic
+sudo snap install spotify
 
 # Install stuff
 sudo apt install -y git neofetch pavucontrol \
