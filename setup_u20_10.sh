@@ -91,12 +91,12 @@ sudo -u $USER source ~/.bashrc
 sudo -u $USER wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
 wget -c https://zoom.us/client/latest/zoom_amd64.deb \
 wget -c https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb \
-curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+wget -c https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
 
 sudo dpkg -i ./google-chrome*.deb
 sudo dpkg -i ./zoom_amd64.deb
 sudo dpkg -i ./steam*.deb
-sudo dpkg -i minikube_latest_amd64.deb
+sudo dpkg -i ./minikube_latest_amd64.deb
 rm *.deb
 sudo apt install -f -y
 
