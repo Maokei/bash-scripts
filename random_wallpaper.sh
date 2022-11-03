@@ -55,6 +55,7 @@ setWallpaper() {
 		gnome | gnome-xorg)
 			echo -n "Gnome"
 			gsettings set org.gnome.desktop.background picture-uri "file://$file"
+			gsettings set org.gnome.desktop.background picture-uri-dark "file://$file"
 			# gsettings get org.gnome.desktop.background picture-uri
 			;;
 		sway)
