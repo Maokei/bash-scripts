@@ -51,6 +51,7 @@ sudo snap install intellij-idea-community --classic
 sudo snap install eclipse --edge --classic
 sudo snap install slack --classic
 sudo snap install kotlin --classic
+sudo snap install rustup --classic
 sudo snap install robo3t-snap
 sudo snap install postman
 sudo snap install insomnia
