@@ -61,8 +61,12 @@ setWallpaper() {
 		sway)
 			echo -n "Sway"
 			;;
-		plasmawayland | plasma )
+		plasmawayland | plasma)
 			echo -n "Kde plasma"
+			;;
+		mate)
+			echo -n "Mate"
+			gsettings set org.mate.background picture-filename ${file}
 			;;
 		*)
 			echo -n "Unknown desktop session: $DESKTOP_SESSION"
