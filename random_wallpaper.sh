@@ -14,6 +14,8 @@ IFS=$'\n'
 wallpapers=($(find $WALL_PATH -iregex '.*\.\(jpg\|gif\|png\|jpeg\)$'))
 unset IFS
 
+echo $install_target
+
 setupService() {
   mkdir -p $install_folder
 	echo "Creating service file"
