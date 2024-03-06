@@ -39,7 +39,7 @@ services:
     networks:
       - nextcloud_net_int
     environment:
-      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PW:-nextcloud1234}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PW:-nextcloud}
       - MYSQL_PASSWORD=$DB_USER_PW
       - MYSQL_DATABASE=nextcloud
       - MYSQL_USER=${DB_USER:-nextcloud}
