@@ -28,13 +28,13 @@ services:
       - NEXTCLOUD_TRUSTED_DOMAINS=$NC_TRUSTED
       - REDIS_HOST=redis
   mariadb:
-    image: "linuxserver/mariadb:alpine"
+    image: "linuxserver/mariadb:latest"
     container_name: nextcloud_mariadb
 #    ports:
 #      - 3306:3306
     restart: always
     volumes:
-      - nextcloudb:/var/lib/mysql
+      - ./db:/var/lib/mysql
       - /etc/localtime:/etc/localtime:ro
     networks:
       - nextcloud_net_int
@@ -50,9 +50,9 @@ services:
       - ./redis:/data  
     networks: 
       - nextcloud_net_int
-volumes:
-  nextcloud:
-  db:
+#volumes:
+#  nextcloud:
+#  db:
 
 networks:
   nextcloud_net_ext:
